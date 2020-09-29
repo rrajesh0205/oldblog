@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<header>
+<nav>
+<div class="topnav">
+    <a href='/'>Home</a>
+    <a class="active" style="pointer-events: none; display:" href='/'>Create</a> 
+</div> 
+<div class="myDiv">My Blog</div> 
+</nav>
+</header>    
+
+<div class="container">
+    
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="creatediv">        
+                {{ form.as_p }}
+            </div>
+            <button type="submit">Create Post</button>
+        </form>
+    
+</div>
+
+{% endblock %}
+

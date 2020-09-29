@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<header>
+<nav>
+<div class="topnav">
+    <a href='/'>Home</a>
+    <a class="active" style="pointer-events: none; display:" href='/'>Post View</a> 
+</div> 
+<div class="myDiv">My Blog</div>
+</nav>
+</header>
+<br>
+<div class="container">
+        <div class="article">
+            
+            <div class="editmenu">
+                    <a href="{% url 'article_edit' article.pk %}" title=" Edit this article">
+                    <img src="{% static 'edit.png' %}", width = "16", height = "16"/></a>
+                    &nbsp;&nbsp;
+                    <a href="{% url 'delete' article.pk %}" title="Delete this article" >
+                    <img src="{% static 'trash.png' %}" , width = "16", height = "16"/></a>
+            </div>
+            <p >{{ article.title }}</p>
+            <p>{{ article.body }}</p>
+
+            {% if article.img.url != Null %}            
+            <center><img src = {{article.img.url}} style="width: 50%; 
+            border: 10px solid white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); 
+            -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); 
+            -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);  " /> </img></center>
+            {% endif %}
+            <br>
+        
+            <div class="article1">
+                  Dated:
+                  &nbsp;{{ article.created_at }}
+                  <br>
+                  {% if article.updated_at != article.created_at %}
+                  Updated:&nbsp;{{ article.updated_at }}
+                  {% endif %}
+            </div>
+        </div> 
+    
+</div>
+{% endblock %}

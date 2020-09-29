@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<header>
+<nav>
+<div class="topnav">
+    <a class="active" style="pointer-events: none; display:" href='/'>Home</a>
+    <a href='create/'>Create</a> 
+</div>
+<div class="myDiv">My Blog</div> 
+</nav>
+</header>    
+<br>
+<!-- 
+<div class="myDiv">
+    <a href="">My Blog</a>
+</div>
+-->
+
+<!--    Made by Erik Terwan    -->
+<!--   24th of November 2015   -->
+<!--        MIT License        -->
+<!-- 
+<nav role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <!-- 
+    <input type="checkbox" />
+    
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <!-- 
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <!-- 
+    <ul id="menu">
+      <a href='/'><li>Home</li></a>
+      <a href='create'><li>Create</li></a>
+    </ul>
+  </div>
+</nav>
+</br>
+-->
+<div class="container">
+    {% for article in object_list|dictsortreversed:"created_at" %}
+        <div class="article">
+            <div class="editmenu">
+                    <a href="{% url 'article_edit' article.pk %}" title=" Edit this article">
+                    <img src="{% static 'edit.png' %}", width = "16", height = "16"/></a>
+                    &nbsp;&nbsp;
+                    <a href="{% url 'delete' article.pk %}" title="Delete this article" >
+                    <img src="{% static 'trash.png' %}", width = "16", height = "16"/></a>
+            </div>
+
+            <p><u><a href="{% url 'detail' article.pk %}">{{ article.title }}</a></u><p>
+            {{ article.body }}
+            <br>
+                
+              {% if article.img.url != Null %}            
+                  <center><img src = {{article.img.url}} style="width: 50%; 
+                  border: 10px solid white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); 
+                  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); 
+                  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);  " /> </img></center>
+              {% endif %}
+              <br>
+              
+              <br>
+          
+            <div class="article1">
+                  &nbsp;{{ article.created_at }}
+                  <br>
+                  {% if article.updated_at != article.created_at %}
+                  Update:&nbsp;{{ article.updated_at }}
+                  {% endif %}
+            </div>
+      </div>
+    <br>
+  {% endfor %}
+  <br>
+</div>
+
+{% endblock %}
+
+
