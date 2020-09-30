@@ -57,6 +57,9 @@
 <div class="container">
     {% for article in object_list|dictsortreversed:"created_at" %}
         <div class="article">
+<!--
+    Trying to put this code in GitHub.
+-->
             <div class="editmenu">
                     <a href="{% url 'article_edit' article.pk %}" title=" Edit this article">
                     <img src="{% static 'edit.png' %}", width = "16", height = "16"/></a>
