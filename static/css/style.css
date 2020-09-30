@@ -193,18 +193,14 @@ form{
 /* Top navigation */
 /* Add a black background color to the top navigation */
 
-.editmenu {
+.modmenu {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   letter-spacing: 3px;
   font-size: 15px;
   text-transform: uppercase;
   color: #ffc515;
-  
-  
   float: right;
-  
-    
 }
 .topnav {
     font-family: 'Playfair Display', serif;
