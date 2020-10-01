@@ -5,13 +5,11 @@
 }*/
 
 body, html {
-  /*tHIS IS A TEST*/
-  /*this is a commit and push to github*/
   font-family: 'Playfair Display', serif;
   font-size: 24px;
   background-color: white  ;
-  overflow-y: scroll;
-  scrollbar-width: thin;
+  /*overflow-y: scroll;
+  scrollbar-width: thin;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
@@ -96,7 +94,7 @@ a:hover{
 .container{   
     /*padding-top: 50px;*/
     position: relative;
-    left: 25%;
+    left: 22%;
     /*top: 50%;*/
     width:50%;
     height: 100%;
@@ -296,7 +294,7 @@ body
 {
   text-decoration: none;
   color: black;
-  color: white;
+
   transition: color 0.3s ease;
   
 }
@@ -332,7 +330,7 @@ body
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #ffc515;
+  background: black;
   border-radius: 3px;
   
   
@@ -415,8 +413,8 @@ body
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  opacity: 0.9;
-  background:black;
+  opacity: 1.0;
+  background:white;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
