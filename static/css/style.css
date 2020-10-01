@@ -295,7 +295,7 @@ body
 #menuToggle a
 {
   text-decoration: none;
-  color: #232323;
+  color: black;
   color: white;
   transition: color 0.3s ease;
   
@@ -408,8 +408,8 @@ body
  */
 #menu
 {
-  
   position: absolute;
+  text-transform:uppercase;
   width: 125px;
   height: 900px;
   margin: -100px 0 0 -50px;
@@ -420,10 +420,8 @@ body
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  
   transition: transform 2s cubic-bezier(.65, 1.95, .03, .32);
   /*cubic-bezier(1.000, -0.530, 0.405, 1.425);
   cubic-bezier(0.77,0.2,0.05,1.0);*/
