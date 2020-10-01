@@ -176,13 +176,15 @@ form{
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     letter-spacing: 3px;
-    font-size: 36px;
-    text-transform: uppercase;
-    background-color:black;
+    font-size: 48px;
     color: white;
+    text-transform: uppercase;
+    /*background-color:black;*/
     margin-left: 1px;
     text-align: center;
     /*top: 50%;*/
+    height: 50px;
+
     
      
 }
@@ -247,7 +249,7 @@ form{
     font-size: 20px;  
     background-color: black;
     color: white;
-    
+
   }
 
   nav {
@@ -408,8 +410,8 @@ body
 {
   
   position: absolute;
-  width: 1800px;
-  height: 800px;
+  width: 125px;
+  height: 900px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
