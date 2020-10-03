@@ -136,18 +136,23 @@ form{
     text-align: justify;
     text-transform: uppercase;
     padding: 50px; 
-    border: 2px solid  #451e3e  ;
+    border: 1px solid  #451e3e  ;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); 
     -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); 
     -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-smooth: always;
-
-    
     /*border: 5px solid #ffc515;*/
-    
 }
+.articletit{
+
+    font-size: 16px;
+    font-smooth: always;
+    text-transform: inherit;
+
+
+    /*border: 5px solid #ffc515;*/
+
+}
+
 .article1{
 
     /*text-shadow: none;*/
@@ -286,14 +291,12 @@ font-family: 'Playfair Display', serif;
 {
   display: block;
   position: relative;
-  top: -65px;
+  top: -55px;
   left: 25px;
   width: 100%;
   z-index: 1;
-  
   -webkit-user-select: none;
   user-select: none;
-  
 }
 
 #menuToggle a
@@ -338,12 +341,11 @@ font-family: 'Playfair Display', serif;
   position: relative;
   background: black;
   border-radius: 3px;
-  
-  
+
   z-index: 1;
-  
+
   transform-origin: 4px 0px;
-  
+
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
@@ -426,7 +428,9 @@ font-family: 'Playfair Display', serif;
   /* to stop flickering of text in safari */
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  transition: transform 2s cubic-bezier(.65, 1.95, .03, .32);
+
+  /* The cubic-bezier() values for the bouncing balloon */
+  transition: transform 2.5s cubic-bezier(.65, 1.95, .03, .32);
   /*cubic-bezier(1.000, -0.530, 0.405, 1.425);
   cubic-bezier(0.77,0.2,0.05,1.0);*/
 }
@@ -434,22 +438,10 @@ font-family: 'Playfair Display', serif;
 #menu li
 {
   padding: 10px 0;
-  font-size: 22px;
-
-
+  font-size: 26px;
 
 }
-#menu li
-{
-  padding: 10px 0;
-  font-size: 22px;
 
-
-
-}
-.test{
-border: 10px solid  #451e3e  ;
-}
 /*
  * And let's slide it in from the left
  */
@@ -457,4 +449,26 @@ border: 10px solid  #451e3e  ;
 {
   transform: none;
   
+}
+
+/* The hover part for the edit and delete icons*/
+
+a.tooltip {
+  position: relative;
+}
+
+a.tooltip span {
+  display: none;    
+}
+
+a.tooltip:hover span, a.tooltip:focus span {
+  display:block;
+  position:absolute;
+  top:-2.5em;
+  left:-1.5em;
+  padding: 0.2em 0.6em;
+  background-color:#ffffff;
+  color:#000;
+  animation: bounceIn 3s infinite;
+  animation-direction: alternate;
 }

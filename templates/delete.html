@@ -1,29 +1,85 @@
-{% load static %}
-{% static 'media' as baseUrl %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">       
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<title>My Blog</title>
-</head>
+{% extends 'base.html' %}
+{% block content %}
 
-<body>
 <header>
 <nav>
+    <!--
 <div class="topnav">
-    <a href='/'>Home</a>
-    <a class="active" style="pointer-events: none; display:" href='/'>Delete Menu</a> 
-</div> 
+    <a class="active" style="pointer-events: none; display:" href='/'>Home</a>
+    <a href='create/'>Create</a>
+</div>
+-->
 </nav>
+<div class="myDiv">
+    <a href='/'>My Blog </a>
+    <div class="myDiv1">
+        <center>Delete Menu</center>
+    </div>
+</div>
+
+</header>
+<br>
+<!--
+<div class="myDiv">
+    <a href="">My Blog</a>
+</div>
+-->
+
+<!--    Made by Erik Terwan    -->
+<!--   24th of November 2015   -->
+<!--        MIT License        -->
+
+<nav role="navigation">
+  <div id="menuToggle">
+    <!-
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+
+    <input type="checkbox" />
+
+    <!-
+    Some spans to act as a hamburger.
+
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <!-
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+
+    <ul id="menu">
+      <a href='/'>
+          <li>Home</li>
+
+      </a>
+
+    </ul>
+  </div>
+</nav>
+
+
 </header>
 
 <div class="createcontainer">
-        <h2><a href="{% url 'detail' article.pk %}">{{ article.title }}</a>: Delete?</h2>
+        <h2><a href="{% url 'detail' article.pk %}">{{ article.title }}
+            <center>
+                <br>
+                {% if article.img.url != Null %}
+                <img src = {{article.img.url}} style="width: 25%;
+                border: 15px solid white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+                -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+                -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);  " />
+                </img>
+            </center>
+            {% endif %}
+        </a>Delete?</h2>
         <form method="post">{% csrf_token %}
         Are you sure you want to delete "{{ article.title }}" ?<br>
         <br>
@@ -31,5 +87,5 @@
     </form>
 </div>
 
-</body>
-</html>
+{% endblock %}
+
