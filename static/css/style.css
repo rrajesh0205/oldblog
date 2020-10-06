@@ -42,6 +42,7 @@ input[type="text"]
     letter-spacing: 1.5px;
     text-transform: uppercase;
     height: 25px;
+    
 }
 
 textarea
@@ -52,6 +53,8 @@ textarea
     font-weight: 400;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    font-family: inherit;
+    
 }
 
 input[type="submit"], button[type="submit"]
@@ -123,7 +126,7 @@ form{
   font-weight: 400;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-
+  
 }
 
 .article{
@@ -142,17 +145,14 @@ form{
     -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
     /*border: 5px solid #ffc515;*/
 }
-.articletit{
+.artbody{
 
-    font-size: 16px;
-    font-smooth: always;
-    text-transform: inherit;
-
-
+  white-space: pre-line;
     /*border: 5px solid #ffc515;*/
 
 }
 
+  
 .article1{
 
     /*text-shadow: none;*/
@@ -170,13 +170,6 @@ form{
   font-size: 18px;
   
   
-}
-.picdiv{
-  width: 50%;
-  border: 10px solid white;    
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); 
-  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); 
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39); 
 }
 
 .myDiv {
@@ -455,6 +448,7 @@ font-family: 'Playfair Display', serif;
 
 a.tooltip {
   position: relative;
+  font-size: 14px;
 }
 
 a.tooltip span {
@@ -469,6 +463,58 @@ a.tooltip:hover span, a.tooltip:focus span {
   padding: 0.2em 0.6em;
   background-color:#ffffff;
   color:#000;
-  animation: bounceIn 3s infinite;
-  animation-direction: alternate;
+  animation: example 2s infinite;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  animation-direction: normal;
+}
+
+@keyframes example {
+  from {top: 30px; }
+  to {top: -30px; }
+}
+
+/*The back to top part */
+
+.my_bttn{
+  height: 45px;
+  width: 45px;
+  background-color: black;
+  border: none;
+  color: white;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 1px;
+  cursor: pointer;
+  outline: none;
+  display: none;
+}
+
+.my_bttn:hover{
+  transform: scale(1.05) 
+             translateY(-5px);
+}
+
+/*The Image Zoom part*/
+.pop
+{
+  /*border: 1px solid #000 ;
+  border-radius: 15%;
+  width: 200px;
+  height: 200px;*/
+  cursor: pointer;
+  width: 50%;
+  
+  border: 15px solid white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+}
+
+.popup
+{
+  width: 75%;
+  border: 15px solid white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+
 }

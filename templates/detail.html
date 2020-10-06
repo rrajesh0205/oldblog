@@ -70,14 +70,18 @@
         <div class="article">
             
             <div class="modmenu">
-                    <a href="{% url 'article_edit' article.pk %}" title=" Edit this article">
-                    <img src="{% static 'edit.png' %}", width = "16", height = "16"/></a>
+                <a href="{% url 'article_edit' article.pk %}" class="tooltip"> <span>Edit</span>
+                <img src="{% static 'edit.png' %}" width = "16" height = "16"/></a>
                     &nbsp;&nbsp;
-                    <a href="{% url 'delete' article.pk %}" title="Delete this article" >
-                    <img src="{% static 'trash.png' %}" , width = "16", height = "16"/></a>
+                <a href="{% url 'delete' article.pk %}" class="tooltip" ><span>Delete</span>
+                <img src="{% static 'trash.png' %}" width = "16" height = "16"/></a>
+                &nbsp;&nbsp;
             </div>
             <p >{{ article.title }}</p>
-            <p>{{ article.body }}</p>
+            <div class="articletit">
+                {{ article.body }}
+            </div>
+            <br>
 
             {% if article.img.url != Null %}            
             <center>
@@ -99,6 +103,7 @@
                   {% endif %}
             </div>
         </div> 
-    
+
 </div>
+<br>
 {% endblock %}
