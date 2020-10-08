@@ -32,4 +32,8 @@ class ArticleDelete(DeleteView):
     model = Article
     template_name = 'delete.html'
     success_url = reverse_lazy('home')
+
+class ArticleAboutView(ListView):
+    model = Article
+    template_name = 'about.html'
     

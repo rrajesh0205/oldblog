@@ -61,10 +61,17 @@
       <a href='create'>
           <li>Create</li>
       </a>
+      <a href='about'>
+          <li>Contact</li>
+      </a>
     </ul>
   </div>
 </nav>
 <br>
+
+<button class="my_bttn">
+    <i class="fa fa-arrow-up"></i>
+</button>
 
 <div class="container">
     {% for article in object_list|dictsortreversed:"created_at" %}
