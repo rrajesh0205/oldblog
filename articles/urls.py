@@ -1,7 +1,6 @@
-from django.urls import path, include
-from .views import ArticleListView, ArticleDetailView, CreatePostView, ArticleUpdate, ArticleDelete, ArticleAboutView
-from django.urls import path 
-from .import views
+from views import ArticleListView, ArticleDetailView, CreatePostView, ArticleUpdate, ArticleDelete, ArticleAboutView
+from django.urls import path
+
 
 urlpatterns = [
     path('', ArticleListView.as_view(), name='home'),
@@ -11,4 +10,3 @@ urlpatterns = [
     path('delete/<int:pk>/', ArticleDelete.as_view(), name='delete'),  
     path('about/', ArticleAboutView.as_view(), name='about'),  
 ]
-
